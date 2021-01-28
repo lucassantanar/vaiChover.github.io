@@ -14,17 +14,57 @@
         <link rel="stylesheet" href="<?php echo asset('css/estilos.css')?>" type="text/css">
     </head>
     <body class="container">
+
+
+    <?php
+
+        $url = "https://api.hgbrasil.com/weather?format=JSON&key=3518af26&city_name=Brasilia";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $data = curl_exec($ch);
+        $result = json_decode($data);
+        $result1 = $result -> results;
+
+    ?>
+
+
+
         <br/>
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand"><i class="fal fa-clouds" style="color:CornflowerBlue"> <p style="font-family: 'Lobster', cursive;">VaiChover?</p></i></a>
+                <form action="{ route('nameCity') }" class="form-inline my-2 my-lg-0" method="get">
+                    <input name="nomeCidade" class="form-control mr-sm-2" type="search" placeholder="Nome da Cidade" aria-label="Nome da Capital">
+                    <a href="https://api.hgbrasil.com/weather?format=JSON&key=3518af26&city_name=Brasilia" class="btn btn-outline-info my-2 my-sm-0">Pesquisar</a>
+                </form>
             </nav>
         </div>
         <hr/>
         <div class="row" style="height: 300px;">
                
             <section class="col-5 p-3 mb-2 bg-light">
-                <p>Coluna - 1</p>
+                
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Cidade</th>
+                <th>Temperatura</th>
+                <th>Humidade</th>
+                <th>Previsão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{$result1->city}}</td>
+                <td>{{$result1->temp}}º</td>
+                <td>{{$result1->humidity}}</td>
+                <td>{{$result1->description}}</td>
+            </tr>
+        </tbody>
+        </table>
+                
+                
             </section>
             <section class="col-7 p-3 mb-2" style="background-color:CornflowerBlue">
                 <p>Coluna - 2</p>
