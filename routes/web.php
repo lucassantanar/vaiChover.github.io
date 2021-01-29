@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReturnController;
+use App\Http\Controllers\TesteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +14,18 @@ use App\Http\Controllers\ReturnController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+//  Route::get('/', function () {
+//      return view('index');
+//  });
+
 
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/teste', function () {
-    return view('teste');
-});
+Route::get('/teste', [TesteController::class, 'index']); //Funciona!!!
+Route::get('/', [ReturnController::class, 'retornaValorIndex']);
 
 Route::match(['get', 'post'], '/{nomeCidade}', [ReturnController::class, 'retornaValorIndex'])
         ->name('nameCity'); 

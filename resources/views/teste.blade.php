@@ -12,21 +12,7 @@
     </head>
     <body class="antialiased">
 
-        <?php
-
-        $url = 'https://api.hgbrasil.com/weather';
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_POST, false);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, 'key=3518af26&city_name=Campinas');
-        $data = curl_exec($ch);
-        $result = json_decode($data);
-        $result1 = $result -> results;
-
-
-        ?>
-
+        <h1>Olá teste!</h1>
             
     </body>
 
