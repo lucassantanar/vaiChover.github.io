@@ -10,7 +10,7 @@ class ReturnController extends Controller
 {
     public function retornaValorIndex (Request $request){
         
-        $dados = $request->query('nomeCidade');
+        $dados = $request->all();
         
         if($dados == null){
             
@@ -20,14 +20,13 @@ class ReturnController extends Controller
         $urlString = '&city_name='; 
         $nomeCidade = $dados['nomeCidade'];        
 
-        $url = "https://api.hgbrasil.com/weather?format=JSON&key=3518af26".$urlString.$nomeCidade;
+        $url = "https://api.hgbrasil.com/weather?format=JSON&key=f87e7d78".$urlString.$nomeCidade;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $data = curl_exec($ch);
         $result = json_decode($data);
         $result1['result1'] = $result -> results;
-
 
         return view('index', $result1);
     } 
