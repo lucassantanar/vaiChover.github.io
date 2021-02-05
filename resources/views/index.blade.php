@@ -22,9 +22,15 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand"><i class="fal fa-clouds" style="color:CornflowerBlue"> <p style="font-family: 'Lobster', cursive;">VaiChover?</p></i></a>
                 <form class="form-inline my-2 my-lg-0" method="get">
-                    <input name="nomeCidade" class="form-control mr-sm-2" type="search" placeholder="Nome da Cidade" aria-label="Nome da Cidade">
-                    <button type="submit" class="btn btn-outline-info my-2 my-sm-0">Buscar</button>
+                    <div class="input-group">
+                        <input name="nomeCidade" class="form-control" type="search" placeholder="Nome da Cidade" aria-label="Nome da Cidade" style="border-right: none;">
+                        <div class="input-group-append">
+                            <button type="submit"class="input-group-text" style="background-color: #FFF"><i class="fas fa-search" style="color:CornflowerBlue"></i></button>
+                        </div>
+                    </div>
                 </form>
+                
+
             </nav>
         </div>
         <hr/>
