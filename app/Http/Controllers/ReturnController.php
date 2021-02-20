@@ -20,7 +20,7 @@ class ReturnController extends Controller
         $urlString = '&city_name='; 
         $nomeCidade = $dados['nomeCidade'];        
 
-        $url = "https://api.hgbrasil.com/weather?format=JSON&key=f87e7d78".$urlString.$nomeCidade;
+        $url = "https://api.hgbrasil.com/weather?format=JSON&key=3181abaf".$urlString.$nomeCidade;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

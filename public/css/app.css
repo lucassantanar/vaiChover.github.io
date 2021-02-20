@@ -1,0 +1,48 @@
+
+@media (max-width: 768px) {
+
+    .row {
+        display: block;
+    }
+    
+    .input-group > input  {
+        width: 115px !important;
+    }
+
+    .navbar-brand {
+        margin: 0 !important;
+    }
+
+    .col-5 {
+        max-width: 100%;
+    }
+
+    .p-3 {
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+    }
+    .col-7 {
+        max-width: 100%;
+    }
+
+    .table {
+        margin-bottom: 1px !important;
+    }
+
+    .navbar {
+        border-top: 1px solid white !important;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    td {
+        padding: 5px !important;
+    }
+
+    th {
+        padding: 5px !important;
+    }
+
+    }
